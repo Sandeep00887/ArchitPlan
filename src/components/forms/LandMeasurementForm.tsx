@@ -75,7 +75,7 @@ const LandMeasurementForm: React.FC<LandMeasurementFormProps> = ({ onSubmit }) =
       </CardHeader>
       
       <CardContent>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => e.preventDefault()}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Input
               label="Width (meters)"
@@ -133,6 +133,7 @@ const LandMeasurementForm: React.FC<LandMeasurementFormProps> = ({ onSubmit }) =
                   width={typeof width === 'number' ? width : 0} 
                   length={typeof length === 'number' ? length : 0}
                   shape={shape}
+                  houseModelPath="/models/house.gltf"
                 />
               </div>
             </div>
